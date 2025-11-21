@@ -24,10 +24,15 @@ namespace Operadores.Models
         {
             Console.WriteLine($"{x} / {y} = {x / y}");
         }
-        public void potencia(double x, double y)
+        public void Potencia(double x, double y)
         {
             double pot = Math.Pow(x, y);
             Console.WriteLine($"{x} elevado a {y} = {pot}");
+        }
+        public void RaizQuadrada(double x)
+        {
+            double raiz = Math.Sqrt(x);
+            Console.WriteLine($"A raiz quadrada de {x} é {raiz}");
         }
     }
 }

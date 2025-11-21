@@ -13,6 +13,7 @@ Console.WriteLine("2 - Subtração");
 Console.WriteLine("3 - Multiplicação");
 Console.WriteLine("4 - Divisão");
 Console.WriteLine("5 - Potência");
+Console.WriteLine("6 - Raiz Quadrada");
 string escolha = Console.ReadLine()!;
 
 double LerNumero(string mensagem)
@@ -35,6 +36,10 @@ else if (escolha == "5")
 {
     x = LerNumero("Digite a base:");
     y = LerNumero("Digite o expoente:");
+}
+else if (escolha == "6")
+{
+    x = LerNumero("Digite o número para calcular a raiz quadrada:"); 
 }
 else
 {
@@ -63,7 +68,10 @@ switch (escolha)
         calc.Divisao(x, y);
         break;
     case "5":
-        calc.potencia(x, y);
+        calc.Potencia(x, y);
+        break;
+    case "6":
+        calc.RaizQuadrada(x);
         break;
     default:
         Console.WriteLine("Operação inválida. Por favor, escolha uma operação válida.");
