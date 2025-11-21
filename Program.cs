@@ -46,35 +46,29 @@ else if  (escolha == "5")
 
 }
 
-if (escolha == "1")
+switch (escolha)
 {
-    calc.Somar(x, y);
-}
-else if (escolha == "2")
-{
-    calc.Subtrair(x, y);
-}
-else if (escolha == "3")
-{
-    calc.Multiplicacao(x, y);
-}
-else if (escolha == "4")
-{
-    if (y == 0)
-    {
-        Console.WriteLine("Erro: Divisão por zero nao e permitida.");
-        return;
-    }
-    else
-    {
-       calc.Divisao(x, y);  
-    }
-}
-else if (escolha == "5")
-{
-    calc.potencia(x, y);
-}
-else
-{
-    Console.WriteLine("Operação inválida.");
+    case "1":
+        calc.Somar(x, y);
+        break;
+    case "2":
+        calc.Subtrair(x, y);
+        break;
+    case "3":
+        calc.Multiplicacao(x, y);
+        break;
+    case "4":
+        if (y == 0)
+        {
+            Console.WriteLine("Erro: Divisão por zero não é permitida.");
+            break;
+        }
+        calc.Divisao(x, y);
+        break;
+    case "5":
+        calc.potencia(x, y);
+        break;
+    default:
+        Console.WriteLine("Operação inválida. Por favor, escolha uma operação válida.");
+        break;
 }
