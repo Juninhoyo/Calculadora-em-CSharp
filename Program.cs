@@ -1,37 +1,53 @@
-﻿int primeiroNumero, segundoNumero;
-string operacao;
+﻿using Operadores.Models;
 
+double x;
+double y;
 
-Console.WriteLine("Escolha a operação (+, -, *, /):");
-operacao = Console.ReadLine()!;
+Operacao calc = new Operacao();
+
+Console.WriteLine("Calculadora Simples\n");
+
+Console.WriteLine("Digite a operação desejada:");
+Console.WriteLine("1 - Soma");
+Console.WriteLine("2 - Subtração");
+Console.WriteLine("3 - Multiplicação");
+Console.WriteLine("4 - Divisão");
+string escolha = Console.ReadLine()!;
 
 Console.WriteLine("Digite o primeiro número:");
-primeiroNumero = Convert.ToInt32(Console.ReadLine());
+while (!double.TryParse(Console.ReadLine(), out x))
+{
+    Console.WriteLine("Entrada invalida. Por favor, digite um numero valido para o primeiro numero:");
+}
 
 Console.WriteLine("Digite o segundo número:");
-segundoNumero = Convert.ToInt32(Console.ReadLine());
+while (!double.TryParse(Console.ReadLine(), out y))
+{
+    Console.WriteLine("Entrada invalida. Por favor, digite um numero valido para o segundo numero:");
+}
 
-if (operacao == "+")
+if (escolha == "1")
 {
-    Console.WriteLine($"Resultado: {primeiroNumero + segundoNumero}");
+    calc.Somar(x, y);
 }
-else if (operacao == "-")
+else if (escolha == "2")
 {
-    Console.WriteLine($"Resultado: {primeiroNumero - segundoNumero}");
+    calc.Subtrair(x, y);
 }
-else if (operacao == "*")
+else if (escolha == "3")
 {
-    Console.WriteLine($"Resultado: {primeiroNumero * segundoNumero}");
+    calc.Multiplicacao(x, y);
 }
-else if (operacao == "/")
+else if (escolha == "4")
 {
-    if (segundoNumero != 0)
+    if (y == 0)
     {
-        Console.WriteLine($"Resultado: {primeiroNumero / segundoNumero}");
+        Console.WriteLine("Erro: Divisão por zero não é permitida.");
+        return;
     }
     else
     {
-        Console.WriteLine("Erro: Divisão por zero não é permitida.");
+       calc.Divisao(x, y);  
     }
 }
 else
