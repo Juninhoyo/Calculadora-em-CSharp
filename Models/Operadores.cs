@@ -24,5 +24,10 @@ namespace Operadores.Models
         {
             Console.WriteLine($"{x} / {y} = {x / y}");
         }
+        public void potencia(double x, double y)
+        {
+            double pot = Math.Pow(x, y);
+            Console.WriteLine($"{x} elevado a {y} = {pot}");
+        }
     }
 }
