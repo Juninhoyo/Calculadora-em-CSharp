@@ -10,14 +10,15 @@ Console.WriteLine("Calculadora Simples\n");
 do
 {
     
-Console.WriteLine("Digite a operação desejada:");
-Console.WriteLine("1 - Soma");
-Console.WriteLine("2 - Subtração");
-Console.WriteLine("3 - Multiplicação");
-Console.WriteLine("4 - Divisão");
-Console.WriteLine("5 - Potência");
-Console.WriteLine("6 - Raiz Quadrada");
-Console.WriteLine("Digite 0 para sair.");
+Console.WriteLine( 
+@"Digite a operação desejada: 
+1 - Soma
+2 - Subtração
+3 - Multiplicação
+4 - Divisão
+5 - Potência
+6 - Raiz Quadrada
+Digite 0 para sair.");
 escolha = Console.ReadLine()!;
 
 double LerNumero(string mensagem)
