@@ -7,32 +7,46 @@ namespace Operadores.Models
 {
     public class Operacao
     {
-        public void Somar(double x, double y)
+        public double Somar(double x, double y)
         {
-            Console.WriteLine($"{x} + {y} = {x + y}");
+            double resultado = x + y;
+            Console.WriteLine($"{x} + {y} = {resultado}");
+            return resultado;
         }
 
-         public void Subtrair(double x, double y)
+        public double Subtrair(double x, double y)
         {
-            Console.WriteLine($"{x} - {y} = {x - y}");
+            double resultado = x - y;
+            Console.WriteLine($"{x} - {y} = {resultado}");
+            return resultado;
         }
-         public void Multiplicacao(double x, double y)
+
+        public double Multiplicacao(double x, double y)
         {
-            Console.WriteLine($"{x} X {y} = {x * y}");
+            double resultado = x * y;
+            Console.WriteLine($"{x} X {y} = {resultado}");
+            return resultado;
         }
-         public void Divisao(double x, double y)
+
+        public double Divisao(double x, double y)
         {
-            Console.WriteLine($"{x} / {y} = {x / y}");
+            double resultado = x / y;
+            Console.WriteLine($"{x} / {y} = {resultado}");
+            return resultado;
         }
-        public void Potencia(double x, double y)
+
+        public double Potencia(double x, double y)
         {
-            double pot = Math.Pow(x, y);
-            Console.WriteLine($"{x} elevado a {y} = {pot}");
+            double resultado = Math.Pow(x, y);
+            Console.WriteLine($"{x} elevado a {y} = {resultado}");
+            return resultado;
         }
-        public void RaizQuadrada(double x)
+
+        public double RaizQuadrada(double x)
         {
-            double raiz = Math.Sqrt(x);
-            Console.WriteLine($"A raiz quadrada de {x} é {raiz}");
+            double resultado = Math.Sqrt(x);
+            Console.WriteLine($"A raiz quadrada de {x} é {resultado}");
+            return resultado;
         }
     }
 }

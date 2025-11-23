@@ -6,6 +6,9 @@ string escolha;
 
 Operacao calc = new Operacao();
 
+List<string> Historico = new List<string>();
+
+
 Console.WriteLine("Calculadora Simples\n");
 do
 {
@@ -18,6 +21,7 @@ Console.WriteLine(
 4 - Divisão
 5 - Potência
 6 - Raiz Quadrada
+7 - Ver Histórico
 Digite 0 para sair.");
 escolha = Console.ReadLine()!;
 
@@ -46,23 +50,30 @@ else if (escolha == "6")
 {
     x = LerNumero("Digite o número para calcular a raiz quadrada:"); 
 }
+else if (escolha == "0" || escolha == "7")
+{
+
+}
 else
 {
     Console.WriteLine("Operação inválida. Por favor, escolha uma operação válida.");
-    return;
+    continue;
 }
 
 
 switch (escolha)
     {
     case "1":
-        calc.Somar(x, y);
+        double res1 = calc.Somar(x, y);
+        Historico.Add($"{x} + {y} = {res1}");
         break;
     case "2":
-        calc.Subtrair(x, y);
+        double res2 = calc.Subtrair(x, y);
+        Historico.Add($"{x} - {y} = {res2}");
         break;
     case "3":
-        calc.Multiplicacao(x, y);
+        double res3 = calc.Multiplicacao(x, y);
+        Historico.Add($"{x} * {y} = {res3}");
         break;
     case "4":
         if (y == 0)
@@ -70,13 +81,30 @@ switch (escolha)
             Console.WriteLine("Erro: Divisão por zero não é permitida.");
             break;
         }
-        calc.Divisao(x, y);
+        double res4 = calc.Divisao(x, y);
+        Historico.Add($"{x} / {y} = {res4}");
         break;
     case "5":
-        calc.Potencia(x, y);
+        double res5 = calc.Potencia(x, y);
+        Historico.Add($"{x} ^ {y} = {res5}");
         break;
     case "6":
-        calc.RaizQuadrada(x);
+        double res6 = calc.RaizQuadrada(x);
+        Historico.Add($"Raiz quadrada de {x} = {res6}");
+        break;
+    case "7":
+        Console.WriteLine("Histórico");
+        if (Historico.Count == 0)
+        {
+            Console.WriteLine("Nenhuma operação realizada ainda.");
+        }
+        else
+        {
+            foreach (var item in Historico)
+            {
+                Console.WriteLine(item);
+            }
+        }
         break;
     case "0":
         Console.WriteLine("Encerrando a calculadora.");
